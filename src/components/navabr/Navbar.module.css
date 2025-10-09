@@ -1,0 +1,24 @@
+.container {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 10;
+}
+
+.button {
+    background: rgb(253, 68, 43);
+    border: 2px solid rgb(63, 27, 27);
+    box-shadow: 5px 5px rgb(63, 27, 27);
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 7px;
+    margin: 10px;
+    float: right;
+    color: rgb(92, 29, 29);
+    cursor: pointer;
+}
+
+.button:hover {
+    box-shadow: 7px 7px rgb(63, 27, 27);
+    transform: rotate(2deg);
+}
