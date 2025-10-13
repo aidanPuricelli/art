@@ -1,0 +1,31 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("/animation-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    background: rgb(230, 182, 226);
+    padding: 20px 30px 30px 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px rgb(63, 27, 27);
+    color: rgb(58, 54, 58);
+}
+
+.content h1 {
+    margin-bottom: 10px;
+}
+
+.content iframe {
+    border-radius: 10px;
+}
+
+.footer {
+    top: 100vh;
+}

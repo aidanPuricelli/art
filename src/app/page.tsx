@@ -3,6 +3,7 @@ import styles from "./page.module.css";
 import Navbar from "@/components/navabr/Navbar";
 import MoreInfo from "@/components/moreInfo/MoreInfo";
 import { shrikhand } from "@/fonts";
+import Footer from "@/components/footer/Footer";
 
 export default function Home() {
   return (
@@ -20,17 +21,18 @@ export default function Home() {
         />
       </div> */}
       <div className={`${styles.name}`}>
-        <div className={`${styles.header} animate__animated animate__fadeInLeft`}>
+        <div className={`${styles.header} animate__animated animate__fadeInLeft animate__delay-1s`}>
           <h1>Jacob Grasser</h1>
         </div>
-        <div className={`${styles.sub} animate__animated animate__fadeInUp`}>
+        <div className={`${styles.sub} animate__animated animate__fadeInUp animate__delay-1s`}>
           <p>-Animator | Illustrator | World Builder-</p>
         </div>
       </div>
-      <div className={`${styles.learnMore} animate__animated animate__fadeInUp animate__delay-1s`}>
+      <div className={`${styles.learnMore} animate__animated animate__fadeInUp animate__delay-2s`}>
         <p>Learn More...</p>
       </div>
       <MoreInfo />
+      <Footer className={styles.footer} />
     </div>
   );
 }

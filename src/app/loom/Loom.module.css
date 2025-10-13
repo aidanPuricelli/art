@@ -1,0 +1,43 @@
+.container {
+    position: relative;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("/loom-bg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    min-height: calc(100vh + 130px);
+}
+
+.content {
+    background: rgb(151, 146, 195);
+    text-align: center;
+    width: 800px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px rgb(84, 81, 98);
+    border: solid 2px rgb(84, 81, 98);
+}
+
+.footer {
+    bottom: 0;
+}
+
+.content p {
+    margin-bottom: 10px;
+    line-height: 25px;
+    color: rgb(38, 38, 47);
+}
+
+.content h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: rgb(85, 85, 104);
+}
+
+.content h1 {
+    margin-bottom: 10px;
+    color: rgb(61, 61, 78);
+}
