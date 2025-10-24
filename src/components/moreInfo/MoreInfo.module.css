@@ -1,233 +1,197 @@
-.all {
-    display: flex;
-    flex-direction: column;
+.moreInfo {
+    position: relative;
+    z-index: 2;
+    margin-top: 100vh;
 }
 
-.container {
-    position: absolute;
-    top: 100vh;
+.panel {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.panel:first-child {
     background-image: url("/bg2.png");
     background-size: cover;
-    background-position: center;            /* scale to cover entire area */
-    background-position: center;       /* center the focal point */
-    background-repeat: no-repeat; 
-    width: 100vw;
-    text-align: center;
-    height: 100vh;
-    left: 0;
-    z-index: 2;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.containerTwo {
-    background-image: url("/bg3.png");
-    background-size: cover;
-    background-position: center;          /* scale to cover entire area */
-    background-position: center;       /* center the focal point */
-    background-repeat: no-repeat; 
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    top: 200vh;
-    left: 0;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.panel:nth-child(2) {
+    background: #f7f5f2;
 }
 
-.content {
-    margin-top: 70px;
-    width: 85%;
-    max-width: 1200px;
-    /* border: solid 2px rgb(63, 27, 27); */
-    margin: 70px auto;
-    /* height: 88vh; */
-    border-radius: 10px;
-    /* box-shadow: 5px 5px rgb(63, 27, 27); */
-    /* background: rgb(253, 68, 43); */
-    text-align: center;
-    padding-left: 10px;
+.panelContent {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     justify-content: center;
-}
-
-.content h1 {
-    padding-top: 10px;
-    color: rgb(63, 27, 27);
-}
-
-.text {
-    width: 80%;
-    z-index: 4;
-}
-
-.text p {
-    margin-bottom: 15px;
-    line-height: 25px;
+    text-align: center;
+    height: 100%;
+    max-width: 750px;
+    width: 90%;
+    padding: 60px 24px;
+    gap: 30px;
+    border-radius: 16px;
 }
 
 .image {
-    width: 300px;
-    height: 300px;
-    position: relative;
-    /* border-radius: 10px; */
+    width: 275px;
+    height: auto;
+    object-fit: cover;
+    box-shadow: 10px 10px rgb(40, 34, 34);
+    border: solid 3px rgb(25, 22, 22);
+    margin-bottom: 10px;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.textBlock {
+    width: 100%;
+    max-width: 800px;
+    background: rgb(147, 147, 220);
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: solid 2px rgb(81, 81, 100);
+    box-shadow: 0 5px rgb(81, 81, 100);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     overflow: hidden;
-    margin-bottom: 20px;
-    border: 3px solid  rgb(33, 17, 17);
-    box-shadow: 10px 10px rgb(33, 17, 17);
 }
 
-.sect {
-    background: rgb(138, 138, 189);
-    padding: 10px;
-    border-radius: 10px;
-    margin: 20px 0;
-    border: solid 2px rgb(63, 27, 27);
-    box-shadow: 0 5px rgb(63, 27, 27);
+.textBlock:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px rgb(81, 81, 100);
 }
 
-.container::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 150px; /* controls fade size */
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(255,255,255, 0.9) 100%);
-    pointer-events: none;
-    z-index: 3;
+.textBlock h2 {
+    font-size: 1.4rem;
+    margin: 0;
+    color: rgb(43, 43, 51);
+    letter-spacing: 0.5px;
 }
 
-.containerTwo::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 150px;
-    background: linear-gradient(to top, rgba(0,0,0,0) 0%, rgba(255,255,255, 0.9) 100%);
-    pointer-events: none;
-    z-index: 3;
+.accordionContent {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
 }
 
-.contentTwo {
-    width: 80%;
-    max-width: 1200px;
+.textBlock.active .accordionContent {
+    max-height: 400px; /* enough for long text */
+    opacity: 1;
+    margin-top: 0px;
+    text-align: left;
 }
 
-.contact {
-    margin: 0 auto 0 auto;
-    width: 66%;
-    background: rgb(167, 228, 185);
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-    border: solid 2px rgb(63, 27, 27);
-    box-shadow: 0 5px rgb(63, 27, 27);
+.textBlock p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 22px;
+    margin-bottom: 10px;
+    margin-right: 20px;
 }
 
-.contact h1 {
-    color: rgb(50, 57, 52);
+.headerRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.icon {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    color: rgb(43, 43, 51);
+    flex-shrink: 0;
+}
+
+.panel:nth-child(2),
+.contactPanel {
+  position: relative;
+  background-image: url("/bg3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #222;
+  border-top: 2px solid rgb(131, 141, 131);
+}
+
+/* Contact form styles */
+.formContainer {
+  background: rgb(198, 237, 198);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px rgb(65, 83, 65);
+  border: solid 2px rgb(65, 83, 65);
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+}
+
+.formContainer h2 {
+  margin-bottom: 24px;
+  font-size: 1.8rem;
+  color: rgb(50, 55, 50);
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem; /* space between each field */
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.form > div {
-    display: flex;
-    flex-direction: column; /* ensures label is above input */
-    align-items: flex-start;
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #999;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: none;
 }
 
-.label {
-    margin-bottom: 6px; /* small gap between label and input */
-    font-weight: 600;
-    color: rgb(50, 57, 52);
+.submitButton {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(74, 82, 74);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.input,
-.textArea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid rgb(63, 27, 27);
-    font-size: 16px;
-    background: rgb(227, 255, 236);
+.submitButton:hover {
+  background-color: rgb(112, 124, 112);
+  transform: translateY(-2px);
 }
 
-.submit {
-    align-self: flex-end;
-    padding: 10px 17px 8px 20px;
-    border: none;
-    border-radius: 6px;
-    background-color: rgb(27, 29, 28);
-    color: rgb(177, 208, 187);
-    cursor: pointer;
-    font-size: 14px;
-    transition: 0.1s;
-}
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .panelContent {
+    gap: 24px;
+    padding: 40px 16px;
+    }
 
-.submit:hover {
-    background-color: rgb(227, 255, 236);
-    color: rgb(27, 29, 28);
-}
-  
-/* MODAL (move to component) */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    animation: fadeIn 0.3s ease;
-    pointer-events: all;
-}
+    .image {
+    width: 220px;
+    }
 
-.modal {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    width: 90%;
-    animation: popUp 0.25s ease;
-}
+    .textBlock h2 {
+    font-size: 1.25rem;
+    }
 
-.closeButton {
-    margin-top: 1.5rem;
-    padding: 0.5rem 1rem;
-    border: none;
-    /* border-radius: 8px; */
-    background-color: #333;
-    color: white;
-    font-weight: 500;
-    cursor: pointer;
-    font-size: 13px;
+    .textBlock p {
+    font-size: 0.95rem;
+    }
 }
-
-.closeButton:hover {
-    background-color: #555;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes popUp {
-    from { transform: scale(0.8); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-  
